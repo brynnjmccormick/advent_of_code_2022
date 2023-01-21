@@ -28,7 +28,9 @@ fn part_2(input: &str) -> usize {
 
         acc
     }).iter().map(|group| {
-        let mut sets = group.iter().map(|line| line.bytes().collect::<HashSet<_>>()).collect::<Vec<_>>();
+        let mut sets = group.iter().map(|line| {
+            line.bytes().collect::<HashSet<_>>()
+        }).collect::<Vec<_>>();
 
         // https://stackoverflow.com/a/65175232
         let mut result = sets.pop().unwrap();
